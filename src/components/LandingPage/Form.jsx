@@ -18,10 +18,8 @@ export const Form = () => {
     formInputErrs: errors,
     setValue,
     setSelectedCountry,
-    reset,
   } = useMyForm();
-  const { isFormLoading, onSubmit, isFormSubmitSuccessful } = useSubmitForm();
-  if (isFormSubmitSuccessful) reset;
+  const { isFormLoading, onSubmit } = useSubmitForm();
   return (
     <section id="form" className="py-24 bg-dark-blue-100 relative">
       {isFormLoading && (
