@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  @apply font-['Poppins',sans-serif];
+}
+.container {
+  @apply mx-auto px-6 lg:px-10 xl:px-20;
+}
+.backdrop {
+  @apply fixed inset-0 bg-dark-blue-500 bg-opacity-75;
+}
+.bar {
+  @apply block h-[1px] w-full bg-black transition-transform;
+}
+.form__input {
+  @apply w-full bg-dark-blue-200 border-dark-blue-300 border py-4 px-4 focus:outline-sky-blue-100 text-dark-blue-600 placeholder:text-opacity-50 placeholder:text-dark-blue-400 placeholder:font-normal;
+}
+.form__input.select__control {
+  @apply py-2.5 w-full bg-dark-blue-200 border-dark-blue-300 border px-1.5 focus:outline-sky-blue-100 capitalize;
+}
+.form__label {
+  @apply text-dark-blue-400 block mb-2 capitalize;
+}
+.error-message {
+  @apply text-sm md:text-base text-red-600 mt-2 block;
+}
