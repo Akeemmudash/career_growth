@@ -19,7 +19,7 @@ export const useSubmitForm = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      // mode: "no-cors", //
+      mode: "no-cors",
     })
       .then((response) => {
         // You cannot access the response body with no-cors mode, so no need for response.json()
