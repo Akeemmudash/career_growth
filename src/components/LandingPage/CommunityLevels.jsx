@@ -63,7 +63,7 @@ export const CommunityLevels = () => {
               <h3 className="text-lg font-semibold">Intermediate Level</h3>
               <p className="">
                 Apply your knowledge. Gain practical experience, access to paid
-                internships  and build your portfolio. Duration - 2 month
+                internships and build your portfolio. Duration - 2 month
               </p>
             </m.div>
           </div>

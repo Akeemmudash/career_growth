@@ -70,6 +70,7 @@ const Navbar = () => {
           <MobileNavMenu
             isMobileMenuOpen={isMobileMenuOpen}
             setIsMobileMenuOpen={setIsMobileMenuOpen}
+            activeSection={activeSection}
           />
         )}
       </AnimatePresence>
@@ -79,7 +80,11 @@ const Navbar = () => {
 
 export default Navbar;
 
-export function MobileNavMenu({ isMobileMenuOpen, setIsMobileMenuOpen }) {
+export function MobileNavMenu({
+  isMobileMenuOpen,
+  setIsMobileMenuOpen,
+  activeSection,
+}) {
   const { handleCloseMobileMenu } = useMobileNavMenu(setIsMobileMenuOpen);
   return createPortal(
     <div className="fixed z-[1001]">
@@ -130,7 +135,11 @@ export function MobileNavMenu({ isMobileMenuOpen, setIsMobileMenuOpen }) {
             <m.li variants={menuItemVariants} key={link}>
               <a
                 href={`#${link}`}
-                className="text-dark-blue-500 block capitalize py-4 hover:scale-105 transition-transform active:scale-95"
+                className={`text-dark-blue-500 block capitalize py-4 hover:scale-105 transition-transform active:scale-95 ${
+                  activeSection === link
+                    ? "text-sky-blue-100"
+                    : "text-dark-blue-500"
+                } `}
               >
                 {link.replace("-", " ")}
               </a>

@@ -44,6 +44,7 @@ const useMyForm = () => {
     handleSubmit,
     formState: { errors },
     setValue,
+    reset,
   } = useReactHookForm({
     mode: "onBlur",
     defaultValues: {
@@ -83,6 +84,7 @@ const useMyForm = () => {
     setValue,
     setSelectedCountry,
     formControl: control,
+    reset,
   };
 };
 

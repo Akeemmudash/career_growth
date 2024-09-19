@@ -18,12 +18,14 @@ export const Form = () => {
     formInputErrs: errors,
     setValue,
     setSelectedCountry,
+    reset,
   } = useMyForm();
-  const { isFormLoading, onSubmit } = useSubmitForm();
+  const { isFormLoading, onSubmit, isFormSubmitSuccessful } = useSubmitForm();
+  if (isFormSubmitSuccessful) reset;
   return (
     <section id="form" className="py-24 bg-dark-blue-100 relative">
       {isFormLoading && (
-        <div className="bg-white bg-opacity-55 inset-0 flex justify-center items-center absolute size-full text-dark-blue-600">
+        <div className="bg-white bg-opacity-55 inset-0 flex justify-center items-center absolute size-full text-dark-blue-600 z-40">
           <Spinner />
         </div>
       )}

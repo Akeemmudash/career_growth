@@ -37,7 +37,6 @@ const useNavMenu = () => {
 
   const [activeSection, setActiveSection] = useState("");
 
-  // Handle scroll event to update active section
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;
