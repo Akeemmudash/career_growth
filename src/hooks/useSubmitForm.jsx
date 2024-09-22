@@ -1,21 +1,18 @@
-import { useState } from "react";
 import Swal from "sweetalert2";
 
 export const useSubmitForm = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbwtfizO_zaQ2t-1DioGY1ngQRmF1tW_Gem_1wiOhvPW4WF0g65ZMV_QUU6kw-f_6i1EdA/exec";
+      "https://script.google.com/macros/s/AKfycbypvLeFFJ039p956KEQ-8uvOAnQCpzdfBLLEph2TIHf5ds_befOQ6i_SjQDlHBZkwJ3/exec";
 
     const formData = new FormData();
 
     Object.keys(data).forEach((key) => {
       formData.append(key, data[key]);
     });
-
-    setIsLoading(true);
-
-    fetch(scriptURL, {
+    formData.append("date", new Date());
+    console.log("formdata", formData);
+    await fetch(scriptURL, {
       method: "POST",
       body: formData,
     })
@@ -38,12 +35,10 @@ export const useSubmitForm = () => {
           confirmButtonText: "Ok",
           confirmButtonColor: "#01A1FC",
         });
-      })
-      .finally(() => setIsLoading(false));
+      });
   };
 
   return {
-    isFormLoading: isLoading,
     onSubmit,
   };
 };

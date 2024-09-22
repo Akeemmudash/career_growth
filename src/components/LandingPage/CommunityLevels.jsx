@@ -43,7 +43,7 @@ export const CommunityLevels = () => {
         <m.div
           variants={containerVariants}
           whileInView="visible"
-          viewport={{ amount: 0.45, once: true }}
+          viewport={{ amount: 0.65, once: true }}
           className="flex flex-col md:flex-row gap-4 mt-16"
         >
           <div className="flex gap-4 flex-col md:w-7/12">

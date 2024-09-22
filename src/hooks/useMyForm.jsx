@@ -42,7 +42,7 @@ const useMyForm = () => {
     register,
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     setValue,
   } = useReactHookForm({
     mode: "onBlur",
@@ -83,6 +83,7 @@ const useMyForm = () => {
     setValue,
     setSelectedCountry,
     formControl: control,
+    isFormSubmitting: isSubmitting,
   };
 };
 

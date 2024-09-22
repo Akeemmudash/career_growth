@@ -4,5 +4,5 @@ export const navlinks = [
   "about-us",
   "community-levels",
   "pricing",
-  "form",
+  "apply",
 ];

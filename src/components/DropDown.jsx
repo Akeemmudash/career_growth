@@ -9,11 +9,11 @@ const dropdownVariants = {
 const DropDownField = ({ fieldName, options, setValue, fieldLabel }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
-  const dropdownRef = useRef(null); // Create a reference for the dropdown
+  const dropdownRef = useRef(null);
 
   function handleOptionClick(option) {
     setSelectedOption(option);
-    setValue(fieldName.toLowerCase(), option);
+    setValue(fieldName.toLowerCase(), option, { shouldTouch: true });
     setIsOpen(false);
   }
 

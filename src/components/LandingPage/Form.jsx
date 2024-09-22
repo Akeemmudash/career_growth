@@ -13,16 +13,17 @@ export const Form = () => {
     formControl,
     countries,
     states,
+    isFormSubmitting,
     handleSubmit,
     register,
     formInputErrs: errors,
     setValue,
     setSelectedCountry,
   } = useMyForm();
-  const { isFormLoading, onSubmit } = useSubmitForm();
+  const { onSubmit } = useSubmitForm();
   return (
-    <section id="form" className="py-24 bg-dark-blue-100 relative">
-      {isFormLoading && (
+    <section id="apply" className="py-24 bg-dark-blue-100 relative">
+      {isFormSubmitting && (
         <div className="bg-white bg-opacity-55 inset-0 flex justify-center items-center absolute size-full text-dark-blue-600 z-40">
           <Spinner />
         </div>
@@ -47,7 +48,7 @@ export const Form = () => {
             ></m.span>
           </m.h2>
           <p className="max-w-lg mx-auto mt-6 text-dark-blue-400">
-            Kingly fill the form below to begin the application process. Once
+            Kindly fill the form below to begin the application process. Once
             you submit the form, a student advisor will get in touch with you at
             your preferred time to discuss your needs, answer all your questions
             and assist you to complete your inquiry/enrollment process.
@@ -119,6 +120,8 @@ export const Form = () => {
                 "data analytics",
                 "software engineer",
                 "product/digital marketing",
+                "cybersecurity/server adminstration",
+                "video editing and vfx",
               ]}
             />
             {errors.skill && (

@@ -22,13 +22,13 @@ export const Hero = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="text-dark-blue-400 lg:text-2xl text-base sm:text-lg mb-7"
         >
-          Join CareerGrowth and unlock your career potential.
+          Join CareerGrowth community and unlock your career potential.
         </m.p>
         <m.a
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
-          href="#form"
+          href="#apply"
           className="bg-sky-blue-300 lg:text-2xl text-white md:px-8 px-6  py-3 md:py-5 rounded-3xl inline-flex justify-center items-center gap-4"
         >
           <span>click here to apply</span>
